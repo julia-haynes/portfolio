@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+    body {max-width:100ch; margin-inline: max(1em, (100% - 100ch) / 2)}
+    nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: oklch(80% 3% 200);}
+    nav a {flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;}
+    nav a.current, nav a[aria-current="page"]{border-bottom: 0.4em solid #94a3b8; padding-bottom: 0.1em;}
+    form {display:grid; grid-template-columns: auto 1fr; gap: 1em; align-items: center;}
+    form label {display:grid; grid-template-columns: subgrid; grid-column: 1 / -1;}
+    form button {grid-column: 1/-1;}
+    form input, form textarea, form select {background: #fff; border: 1px solid #bfbfbf; color: inherit; appearance: none;}
+    </style>
 </head>
 <body>
-    <h1> Contact Form </h1>
     <nav>
     <a href="../index.html">Home</a>
     <a href="../projects/index.html">Projects</a>
@@ -14,18 +25,19 @@
     <a href="../CV/index.html">CV</a>
     <a href="https://github.com/julia-haynes" target="_blank" rel="noopener">GitHub</a>
     </nav> 
+    <h1> Contact Form </h1>
 
     <form action="mailto:jshaynes@ucsd.edu" method="post" enctype="text/plain">
-        <label> Email
+        <label> Email:
                 <input name = "email" type = "email" />
         </label>
-        <label>Subject
+        <label>Subject:
             <input name = "subject" type = "text" />
         </label>
-        <label>Body
+        <label>Message: 
             <textarea name = "body">  </textarea>
         </label>
-        <button>Submit</button>
+        <button>Send</button>
     </form>
 </body>
 </html>
