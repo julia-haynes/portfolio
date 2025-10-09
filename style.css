@@ -11,3 +11,6 @@ input, textarea, button, select {font: inherit;}
 h1, h2, h3, h4, h5, h6 {line-height: 1.1; text-wrap: balance; 
     &:is(h1){font-size: 400%;}}
 .projects { & h2 {margin: 0;}}
+
+.cv-page {background: url(images/eso2406a.jpg.webp) center / cover no-repeat; color:#fff; min-height:100dvh;}
+.cv-page .institution-name {color: #bfdbfe; text-shadow: 0 1px 2px rgba(0,0,0,.6);}
