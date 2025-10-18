@@ -18,16 +18,16 @@ console.log("IT'S ALIVE!")
 
 const BASE_PATH =
   location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-    ? '/' // Local server
+    ? '/' // Local server is /
     : '/portfolio/'; // GitHub Pages repo name 
 
 let pages = [
     {url: '', title: 'Home' },
     {url: 'projects/', title: 'Projects' },
     {url: "contact/",  title: "Contact" },
-    {url: "cv/", title: "CV" },
+    {url: "CV/", title: "CV" },
     {url: "https://github.com/julia-haynes", title: "GitHub" } 
-    // add the rest of your pages here
+    
 ];
 
 let nav = document.createElement('nav');
@@ -39,7 +39,6 @@ for (let p of pages) {
         url = BASE_PATH + url;   
 }
     let title = p.title;
-    // next step: create link and add it to nav 
     let a = document.createElement('a');
 a.href = url;
 a.textContent = title;
@@ -90,11 +89,5 @@ select.addEventListener('input', function (event) {
 
 
 
-
-
-// select.addEventListener('input', (event) => {
-//     let value = event.target.value;
-//     console.log('Theme changed to:', value);
-// });
 
 
