@@ -4,10 +4,14 @@ body {
 	 */
   font: 100%/1.5 system-ui;
 }
+nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+  /* ... other styles and nested rules ... */
+}
 :root {--color-accent: oklch(60% 45% 0);}
-html {accent-color: var(--color-accent);}
+html {accent-color: var(--color-accent); color-scheme: light dark; background: Canvas; color: CanvasText; border-bottom-color: var(--border-color); }
 nav a:hover {border-bottom: 0.4em solid var(--color-accent); background-color: oklch(from var(--color-accent) 95% 5% h)}
-input, textarea, button, select {font: inherit;}
+input, textarea, button, select {font: inherit; font-size: 100%;}
 h1, h2, h3, h4, h5, h6 {line-height: 1.1; text-wrap: balance; 
     &:is(h1){font-size: 400%;}}
 .projects { & h2 {margin: 0;}}
@@ -16,3 +20,9 @@ h1, h2, h3, h4, h5, h6 {line-height: 1.1; text-wrap: balance;
 .cv-page .institution-name {color: #bfdbfe; text-shadow: 0 1px 2px rgba(0,0,0,.6);}
 .cv-page h2{color: #fff;}
 .cv-page h1{color: orange}
+
+.color-scheme {position:absolute;
+    background: Canvas; color: CanvasText; 
+    top: 1rem; right: 1rem; font-size: 80%; font-family: inherit;    
+}
+
