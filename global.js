@@ -86,8 +86,38 @@ select.addEventListener('input', function (event) {
     localStorage 
 });
 
+export async function fetchJSON(url) {
+    try{
+        // Fetch the JSON file from the given URL
+        const response = await fetch(url);
+        if (!response.ok) {throw new Error(`Failed to fetch projects: ${response.statusText}`);} 
+        const data = await response.json();
+        console.log('✅ JSON data:', data);
+        return data;
+        //console.log(response)
+    } catch (error) {
+        console.error('Error fetching or parsing JSON data:', error);
+    }
+}
+
+fetchJSON('../lib/projects.json');
 
 
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+    containerElement.innerHTML = '';
+    projects.forEach(project => {
+        const article = document.createElement('article');
+        const imageSrc = project.image
+            ? project.image
+            : 'https://vis-society.github.io/labs/2/images/empty.svg';
+        article.innerHTML = `
+            <${headingLevel}>${project.title}</${headingLevel}>
+            <img src="${imageSrc}" alt="${project.title}"> 
+            <p>${project.description}</p>
+        `;
+    containerElement.appendChild(article);
+});
+}
 
-
+//renderProjects(projects, projectsContainer, 'h2');
 
