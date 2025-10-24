@@ -2,37 +2,37 @@
     {
         "title": "Lunar Crater Simulation",
         "year": "2023",
-        "image": "../images/Screenshot 2025-10-23 at 5.10.15 PM.png",
+        "image": "/images/Screenshot 2025-10-23 at 5.10.15 PM.png",
         "description": "This forward simulation maps the cratering pattern on the moon's surface, spanning 2 billion years from the beginning of time."
     },
     {
         "title": "Modeling the Atmospheres of Brown Dwarfs",
         "year": "2025",
-        "image": "../images/Screenshot 2025-10-23 at 7.08.53 PM.png",
+        "image": "/images/Screenshot 2025-10-23 at 7.08.53 PM.png",
         "description": "Using UCDMCMC, we model the atmoshperes of brown dwarfs using various models such as elfowl, and btsettle"
     },
     {
         "title": "Nutrition Data Visualization",
         "year": "2025",
-        "image": "../images/Screenshot 2025-10-13 at 11.14.21 PM.png",
+        "image": "/images/Screenshot 2025-10-13 at 11.14.21 PM.png",
         "description": "Whole Foods is the Healthiest Store Across Multiple Metrics. We analyzed a dataset with nutritional info on many stores"
     },
     {
         "title": "Total Strain on Workers: Data Vizualization",
         "year": "2025",
-        "image": "../images/Screenshot 2025-10-23 at 6.15.58 PM.png",
+        "image": "/images/Screenshot 2025-10-23 at 6.15.58 PM.png",
         "description": "This project showcases how the same data can be used to show opposite trends. Here I am vizulaizing the total strain on workers, and I use multiple metrics such as the old-age dependency ratio, as well as the total-dependency ratio."
     },
     {
         "title": "Brown Dwarf Identification Model",
         "year": "2025",
-        "image": "../images/Screenshot 2025-10-23 at 6.29.02 PM.png",
+        "image": "/images/Screenshot 2025-10-23 at 6.29.02 PM.png",
         "description": "We use gaussian resampling to create synthetic spectra and add it to our sample of brown dwarfs. We made a binary machine learning model to identify brown dwarfs."
     },
     {
         "title": "Catalog of Galaxies",
         "year": "2024",
-        "image": "../images/Screenshot 2025-10-23 at 6.56.13 PM.png",
+        "image": "/images/Screenshot 2025-10-23 at 6.56.13 PM.png",
         "description": "We created a catalog of galaxies, here we have the non interacting objects. "
     },
     {
