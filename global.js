@@ -1,5 +1,6 @@
 console.log("IT'S ALIVE!")
 
+//const BASE_PATH = '/portfolio/';
 
 // function $$(selector, context = document) {
 //     return Array.from(context.querySelectorAll(selector));
@@ -21,6 +22,37 @@ console.log("IT'S ALIVE!")
     //? '/' // Local server is /
     //: '/portfolio/'; // GitHub Pages repo name 
 
+// let pages = [
+//   { url: '', title: 'Home' },
+//   {
+//     url:
+//       location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+//         ? 'projects/index.html'
+//         : 'projects/',
+//     title: 'Projects',
+//   },
+//   {
+//     url:
+//       location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+//         ? 'contact/index.html'
+//         : 'contact/',
+//     title: 'Contact',
+//   },
+//   {
+//     url:
+//       location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+//         ? 'CV/index.html'
+//         : 'CV/',
+//     title: 'CV',
+//   },
+//   { url: 'https://github.com/julia-haynes', title: 'GitHub' },
+// ];
+
+const BASE_PATH =
+   location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+     ? '/portfolio/'   // when testing locally
+     : './';           // when running on GitHub Pages
+
 let pages = [
     {url: '', title: 'Home' },
     {url: 'projects/', title: 'Projects' },
@@ -36,7 +68,7 @@ document.body.prepend(nav);
 for (let p of pages) {
     let url = p.url;
     if (!url.startsWith('http')) {
-        url = BASE_PATH + url;   
+        url = BASE_PATH  + url;   
 }
     let title = p.title;
     let a = document.createElement('a');
@@ -101,15 +133,15 @@ export async function fetchJSON(url) {
 }
 
 //fetchJSON('../lib/projects.json');
-const BASE_PATH = '/portfolio/';
+//const BASE_PATH = '/portfolio/';
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = '';
     projects.forEach(project => {
         const article = document.createElement('article');
-        const imageSrc =  BASE_PATH + project.image
-            ? BASE_PATH + project.image
-            : 'https://vis-society.github.io/labs/2/images/empty.svg';
+        const imageSrc = '/portfolio/'+ project.image
+          ? project.image 
+          : 'https://vis-society.github.io/labs/2/images/empty.svg';
         article.innerHTML = `
             <${headingLevel}>${project.title}</${headingLevel}>
             <img src="${imageSrc}" alt="${project.title}"> 
