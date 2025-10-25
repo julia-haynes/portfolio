@@ -1,7 +1,5 @@
 console.log("IT'S ALIVE!")
 
-//const BASE_PATH = '/portfolio/';
-
 // function $$(selector, context = document) {
 //     return Array.from(context.querySelectorAll(selector));
 // }
@@ -48,10 +46,13 @@ console.log("IT'S ALIVE!")
 //   { url: 'https://github.com/julia-haynes', title: 'GitHub' },
 // ];
 
-const BASE_PATH =
-   location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-     ? '/portfolio/'   // when testing locally
-     : './';           // when running on GitHub Pages
+//const BASE_PATH =
+   //location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    // ? '/portfolio/'   // when testing locally
+    // : './';           // when running on GitHub Pages
+
+
+const BASE_PATH = '/portfolio/';
 
 let pages = [
     {url: '', title: 'Home' },
