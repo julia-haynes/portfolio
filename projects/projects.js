@@ -16,10 +16,10 @@ if (!projects || projects.length === 0) {
   message.textContent = 'No projects found.';
   projectsContainer.appendChild(message);
 } else {
-  renderProjects(projects, projectsContainer, 'h2');
+  renderProjects(projects, projectsContainer, 'h2', BASE_PATH);
 }
 
-renderProjects(projects, projectsContainer, 'h2');
+renderProjects(projects, projectsContainer, 'h2', BASE_PATH);
 
 const titleElement = document.querySelector('.projects-title');
 if (titleElement) {
