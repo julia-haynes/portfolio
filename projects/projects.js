@@ -1,14 +1,15 @@
-const BASE_PATH = '/portfolio/';
+
 
 import { fetchJSON, renderProjects } from '../global.js'
-const projects = await fetchJSON(BASE_PATH + 'lib/projects.json');
+const BASE_PATH = '/portfolio/';
+const projects = await fetchJSON(BASE_PATH + '../lib/projects.json');
 const projectsContainer = document.querySelector('.projects');
 
-projects.forEach(project => {
-  const img = document.createElement('img');
-  img.src = BASE_PATH + project.image;  
-  projectsContainer.appendChild(img);
-});
+//projects.forEach(project => {
+ // const img = document.createElement('img');
+ // img.src = BASE_PATH + project.image;  
+  //projectsContainer.appendChild(img);
+//});
 
 if (!projects || projects.length === 0) {
   const message = document.createElement('p');
