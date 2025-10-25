@@ -16,10 +16,10 @@ console.log("IT'S ALIVE!")
 //     currentLink.classList.add('current');
 // }
 
-const BASE_PATH =
-  location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-    ? '/' // Local server is /
-    : '/portfolio/'; // GitHub Pages repo name 
+//const BASE_PATH =
+  //location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    //? '/' // Local server is /
+    //: '/portfolio/'; // GitHub Pages repo name 
 
 let pages = [
     {url: '', title: 'Home' },
@@ -101,14 +101,14 @@ export async function fetchJSON(url) {
 }
 
 //fetchJSON('../lib/projects.json');
+const BASE_PATH = '/portfolio/';
 
-
-export function renderProjects(projects, containerElement, headingLevel = 'h2', basePath='') {
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
     containerElement.innerHTML = '';
     projects.forEach(project => {
         const article = document.createElement('article');
-        const imageSrc = project.image
-            ? basePath + project.image
+        const imageSrc =  BASE_PATH + project.image
+            ? BASE_PATH + project.image
             : 'https://vis-society.github.io/labs/2/images/empty.svg';
         article.innerHTML = `
             <${headingLevel}>${project.title}</${headingLevel}>
