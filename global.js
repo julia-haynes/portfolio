@@ -107,7 +107,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     containerElement.innerHTML = '';
     projects.forEach(project => {
         const article = document.createElement('article');
-        const imageSrc = project.image
+        const imageSrc = BASE_PATH + project.image
             ? project.image
             : 'https://vis-society.github.io/labs/2/images/empty.svg';
         article.innerHTML = `
