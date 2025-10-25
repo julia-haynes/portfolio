@@ -46,13 +46,13 @@ console.log("IT'S ALIVE!")
 //   { url: 'https://github.com/julia-haynes', title: 'GitHub' },
 // ];
 
-//const BASE_PATH =
-   //location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-    // ? '/portfolio/'   // when testing locally
-    // : './';           // when running on GitHub Pages
+const BASE_PATH =
+  location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? '/' // Local server
+    : '/portfolio/';         // when running on GitHub Pages
 
 
-const BASE_PATH = '/portfolio/';
+//const BASE_PATH = '/portfolio/';
 
 let pages = [
     {url: '', title: 'Home' },
@@ -69,7 +69,8 @@ document.body.prepend(nav);
 for (let p of pages) {
     let url = p.url;
     if (!url.startsWith('http')) {
-        url = BASE_PATH  + url;   
+       url = BASE_PATH  + url;
+     
 }
     let title = p.title;
     let a = document.createElement('a');
@@ -140,8 +141,8 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     containerElement.innerHTML = '';
     projects.forEach(project => {
         const article = document.createElement('article');
-        const imageSrc = '/portfolio/'+ project.image
-          ? project.image 
+        const imageSrc = project.image
+          ? BASE_PATH + project.image 
           : 'https://vis-society.github.io/labs/2/images/empty.svg';
         article.innerHTML = `
             <${headingLevel}>${project.title}</${headingLevel}>

@@ -1,13 +1,17 @@
 
 
+const BASE_PATH =
+  location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? '/' // Local server
+    : '/portfolio/';
 import { fetchJSON, renderProjects } from '../global.js'
-const BASE_PATH = '/portfolio/';
-const projects = await fetchJSON(BASE_PATH + 'lib/projects.json');
+//const BASE_PATH = '/portfolio/';
+const projects = await fetchJSON(BASE_PATH + '../lib/projects.json');
 const projectsContainer = document.querySelector('.projects');
 
 //projects.forEach(project => {
- // const img = document.createElement('img');
- // img.src = BASE_PATH + project.image;  
+  //const img = document.createElement('img');
+  //img.src = BASE_PATH + project.image;  
   //projectsContainer.appendChild(img);
 //});
 
@@ -16,10 +20,10 @@ if (!projects || projects.length === 0) {
   message.textContent = 'No projects found.';
   projectsContainer.appendChild(message);
 } else {
-  renderProjects(projects, projectsContainer, 'h2', BASE_PATH);
+  renderProjects(projects, projectsContainer, 'h2');
 }
 
-renderProjects(projects, projectsContainer, 'h2', BASE_PATH);
+renderProjects(projects, projectsContainer, 'h2');
 
 const titleElement = document.querySelector('.projects-title');
 if (titleElement) {
