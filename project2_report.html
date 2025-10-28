@@ -1,0 +1,217 @@
+<script src="global.js" type="module"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+    body {max-width:100ch; margin-inline: max(1em, (100% - 100ch) / 2)}
+    img { max-width: 100%; height: auto; display: block; } 
+    nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: oklch(80% 3% 200);}
+    nav a {flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;}
+    nav a.current, nav a[aria-current="page"]{border-bottom: 0.4em solid #94a3b8; padding-bottom: 0.1em;}
+    </style>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  <script type="text/javascript" nonce="7e8bfab8f3a34533a1f1a25c0e0" src="//local.adguard.org?ts=1761623331546&amp;type=content-script&amp;dmn=dsc-courses.github.io&amp;url=https%3A%2F%2Fdsc-courses.github.io%2Fdsc209r-2025-fa%2Fprojects%2Fproject2_report.html&amp;app=com.apple.Safari&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-push&amp;st-loc&amp;st-java&amp;st-dnt&amp;st-1pcttl=4320"></script><script type="text/javascript" nonce="7e8bfab8f3a34533a1f1a25c0e0" src="//local.adguard.org?ts=1761623331546&amp;name=AdGuard%20Extra&amp;type=user-script"></script></head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Julia Haynes</strong> — <em>jshaynes@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: The Strain on the Working Population is Rising Rapidly</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="images/proposition.png" alt="proposition visualization" />
+          <figcaption>Old-Age Dependency Ratio = population 65+ / working-age population (15–64). This number represents the strain on the working-age population. The United States, China, Italy and Japan are four of the highest economies by nominal GDP. The proportion of people over 65 compared to the working population is increasing rapidly. Japan's aging population now leads globally."</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>(2) I use the Old-age dependency ratio as a measure of the strain on the working population. According to my college course “Your Longer Life” at Columbia University, the old-age dependency ratio is the most common and accurate way to quantify the strain on the working population. It is defined as the population over 65, divided by the working-age population which is people 15-64. It works well because as time goes on, the old-age dependency ratio increases, showing an increasing strain as time goes on. I did consider other metrics that represent the strain on the working population, such as the total dependency ratio, and young-age dependency ratios, but I ultimately chose the old-age dependency ratio because it is the most accurate when it comes to quantifying the strain on the working population. I do consider the other metrics for my counter visualization.</li>
+          <li>(-1) I made sure to include countries like Japan and Italy in which the old-age dependency ratio has a steep slope. This works well because it shows a significant change on the visualization, emphasizing the increased strain on the working population.  It fits with the selection criteria of four of the largest economies in terms of nominal GDP. However, this is a bit misleading because while Japan and Italy represent major economies, they are outliers. Having outliers make up half of the data results in a skewed perception of the whole distribution. I also considered adding countries such as South Korea that have a steep increase in the old-age dependency ratio, but there was not a meaningful selection criteria I could use to include both South Korea and Japan, and I felt that Japan was a better example as it shows greater increase in the old-age dependency ratio.</li>
+          <li>(1) I cut the data to begin from 1985 to highlight the portion of data with the most increase in the old-age dependency ratio. It works well as this makes the graph look like it is increasing for a longer time, drawing attention to the distinct increase. This makes it easier to see, as otherwise it looks like a mostly flat plot with increase at the end. I did consider cutting it from 1995 since it was mostly flat before then, but I did not like that it drew more attention to the negative slope of the United States from 1993-2005, so I chose to cut it from 1985.</li>
+          <li>(1) I made the y-axis go from 0-60 in order to emphasize the increase in the old-age dependency ratio. It works well because a smaller increase covers a larger part of the plot, making it easier to see. I did initially consider going from 0-100, but the increase in the old-age dependency ratio is harder to see, as Japan covers less than half of the y-axis, whereas it currently covers a majority.</li>
+          <li>(2) I added the country’s flags next to each country’s line. This is a redundant encoding as the country name is already included in the legend, but I think it worked well because it makes the country even clearer. Some people prefer visual representations while others prefer words, so it is good to have both options. I had considered putting the flags in the legend, but I found that having the flags next to the lines made it faster to recall which line was from which country, so I added it next to the line.  I also made the line of each country a color that is in the flag, in order to make it easier to read.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="images/propcounter.png" alt="counter proposition visualization" />
+          <figcaption>Total dependency ratio = (population under 15 + population 65+) / working-age population (15–64). This number represents the strain on the working-age population, and follows a normal oscillating pattern. The United Kingdom, United States, Australia, and Canada are all high income English speaking countries part of OECD (Organisation for Economic Co-operation and Development).</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>(-2) I use the total dependency ratio as a measure of the strain on the working population. This is the old-age dependency ratio added to the young-age dependency ratio. According to my college course “Your Longer Life” on the aging population, the old-age dependency ratio is the most common and accurate way to quantify the strain on the working population. Instead, I used the total dependency ratio, which is the population under 15 plus the population over 65, divided by the population between 15-65. I did this in order to be deceptive and emphasize my proposition that the strain on workers follows a normal pattern. This works well because this seems similar to the old-age dependency ratio, and some may even mistake the two, but it paints a very different picture from the old-age dependency ratio. I considered using the young-age dependency ratio alone, but I found lots of variation in the data, and decided to go with the total dependency ratio which painted a more clearer picture. </li>
+          <li>(-2) I cut the data from 1980 to 2015, because that was the part of the data in which the four countries showed a similar oscillatory pattern. It worked really well because the data looks much more patterned than it was otherwise. I had considered only cutting it from 1980, and including the data passed 2015, but I found that the data from 2015-2020 however small really impacts the overall shape of the lines, and I wanted to emphasize a somewhat uniform pattern.</li>
+          <li>(1) I made the y-axis go from 43-57. I did this to highlight the pattern in the data, since the oscillations fall in that range. I considered using a wider range, but with each line being closer together it is harder to see. I went with my current axis as it allowed for clear space between each line, and the lines cover almost all of the y axis. </li>
+          <li>(2) In this plot I also added the country’s flags next to each country’s line. This is a redundant encoding as the country name is already included in the legend, but it works well because it makes the country even clearer. Some people prefer visual representations while others prefer words, so it is good to have both options. I had considered putting the flags in the legend, but I found that having the flags next to the lines made it faster to recall which line was from which country, so I added it next to the line. I also made the line of each country a color that is in the flag, in order to make it easier to read.</li>
+          <li>(-1.5) I made sure to not include any African countries, as they mostly have growing populations, which results in a declining total dependency ratio, instead of the oscillating pattern we have here. This is deceptive because Africa is a large part of the world, and excluding it is not representative of the world. Excluding Africa worked well for the plot because it allowed me to show a consistent pattern that shows an oscillating pattern. I did consider adding Egypt as the population is not rising as much as the rest, but I found that when plotted there is much separation between Egypt and other countries, making the plot incohesive. I decided to exclude all African countries.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>It was straightforward to perform data analysis on the various datasets, and once the data was compiled, it was also very straightforward to create the visualizations. However, it was difficult to find data that convincingly represented opposing ideas, which required me to try several propositions.  I was surprised by how many subtle decisions go into designing a persuasive visualization. Every detail from font size, line thickness, color, and spacing, can significantly shift the emotional impact of a visualization. For example, certain fonts can seem more formal or professional, which can make a visualization feel more credible to viewers. This process has deepened my understanding of how to create truthful visualizations, and also given me insight to be able to better decipher untruthful visualizations. 
+One way I now define ‘ethical analysis and visualization’ is that the goal of the visualization should reflect reality. For my visualizations, I had the choice of choosing which metric best describes the strain on the working population. I knew that the old-age dependency ratio is the best metric, and that the other ones such as the young-age dependency ratio and the total dependency ratio are similar sounding metrics that are very different and ultimately paint a very different picture. In my visualizations, I claimed that both the old-age dependency ratio and the total dependency ratio both reflected the strain on the working population. This is unethical, as only the old-age dependency is used as a standard for this metric. As a data scientist it is my ethical responsibility to ensure that what I’m claiming is true, that the metric actually represents what I say. It is most certainly unethical to use misleading metrics that can easily be mistaken for something else. In this case, acceptable persuasive choices would be choosing metrics that still represent the truth, while misleading metrics make false conclusions. 
+Another aspect of ethical analysis and visualization is conveying the full story. In my visualizations, I made decisions about cutting the data before or after certain years, in order to further my proposition. This can be both ethical and unethical. In my first visualization, ‘The Strain on the Working Population is Increasing Rapidly’, I highlighted the portion of the data where the rate of increase is greater, to show that rapid change is occurring. Without doing so, the line looks mostly flat, with a slight increase at the end, and it is harder to see how much is increasing. In this case by cutting out the older data, I am making the information easier to see, which is both persuasive and ethical. However, in my counter visualization, I cut the data to be from 1985 to 2015, because this portion of my data showed a consistent pattern that the other parts did not. In this case it is an unethical, misleading choice, because I want to draw a conclusion that is false, while previously I was drawing greater attention to what was true. 
+</p>
+      </section>
+    </main>
+  </body>
+</html>
