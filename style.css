@@ -33,3 +33,7 @@ h1, h2, h3, h4, h5, h6 {line-height: 1.1; text-wrap: balance;
 #profile-stats dd {font-size: 1.8rem; font-weight: 600; margin: 0; grid-row: 2;}
 
 .projects img { width: 100%; height:auto; max-width: 100%; object-fit: cover; border-radius: 8px; display: block;}
+#projects-pie-plot {max-width: 20em; margin-block: 2m; overflow: visible;}
+.swatch {display: flex; height: 1em; aspect-ratio: 1/1; background-color: var(--color); border-radius: 33%; align-items: center; gap: 1em;}
+.legend {display: grid; grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); padding: 2rem; margin: 1rem; gap: 1rem; border: 1px solid #ccc; flex: 1;}
+.container {display: flex; gap: 1rem; align-items: center;}

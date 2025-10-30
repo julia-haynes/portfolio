@@ -147,8 +147,11 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
           : 'https://vis-society.github.io/labs/2/images/empty.svg';
         article.innerHTML = `
             <${headingLevel}>${project.title}</${headingLevel}>
-            <img src="${imageSrc}" alt="${project.title}"> 
-            <p>${project.description}</p>
+            <img src="${imageSrc}" alt="${project.title}">
+            <div class="project-info"> 
+              <p>${project.description}</p>
+              <p style="font-family: Baskerville, serif; font-variant-numeric: oldstyle-nums;">C. ${project.year}</p>
+            </div>
         `;
     containerElement.appendChild(article);
 });
