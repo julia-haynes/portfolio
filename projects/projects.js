@@ -7,7 +7,7 @@ const BASE_PATH =
 import { fetchJSON, renderProjects } from '../global.js'
 //const BASE_PATH = '/portfolio/';
 //const projects = await fetchJSON(BASE_PATH + '../lib/projects.json');
-const projects = await fetchJSON('../lib/projects.json');
+const projects = await fetchJSON(BASE_PATH + '../lib/projects.json');
 //const projects = await fetchJSON('lib/projects.json');
 const projectsContainer = document.querySelector('.projects');
 
@@ -88,10 +88,9 @@ data.forEach((d, idx) => {legend.append('li').attr('style', `--color:${colors(id
 
 //});
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
-
 let query = '';
 let searchInput = document.querySelector('.searchBar');
-searchInput.addEventListener('input', (event) =>{query = event.target.value; let filteredProjects = projects.filter((project) =>{let values = Object.values(project).join('\n').toLowerCase();return values.includes(query.toLowerCase());}); renderProjects(filteredProjects, projectsContainer, 'h2');});
+//searchInput.addEventListener('input', (event) =>{query = event.target.value; let filteredProjects = projects.filter((project) =>{let values = Object.values(project).join('\n').toLowerCase();return values.includes(query.toLowerCase());}); renderProjects(filteredProjects, projectsContainer, 'h2');});
 
 function renderPieChart(projectsGiven) {
   d3.select('svg').selectAll('path').remove();
@@ -111,6 +110,7 @@ renderPieChart(projects);
 searchInput.addEventListener('input', (event) =>{query = event.target.value; let filteredProjects = projects.filter((project) =>{let values = Object.values(project).join('\n').toLowerCase();return values.includes(query.toLowerCase());}); renderProjects(filteredProjects, projectsContainer, 'h2');renderPieChart(filteredProjects);});
 
 let selectedIndex = -1
+selectedIndex === i ? -1 : i;
 let svg = d3.select('svg');
 svg.selectAll('path').remove();
-arcs.forEach((arc, i) => {svg.append('path').attr('d', arc).attr('fill', colors(i)).on('click', () => {});})
+arcs.forEach((arc, i) => {svg.append('path').attr('d', arc).attr('fill', colors(i)).on('click', () => {selectedIndex = selectedIndex === i ? -1 : i; svg.selectAll('path').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : '')); legend .selectAll('li').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' :''));});});

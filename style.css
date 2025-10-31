@@ -39,4 +39,9 @@ h1, h2, h3, h4, h5, h6 {line-height: 1.1; text-wrap: balance;
 .container {display: flex; gap: 1rem; align-items: center;}
 
 &:has(path:hover) {path:not(:hover){opacity: 0.5;}}
-path {transition: 300ms;}
+path {transition: 300ms; cursor: pointer;}
+
+.selected{--color: oklch(60% 45% 0) !important;}
+path.selected {fill: oklch(60% 45% 0) !important;}
+
+
