@@ -37,3 +37,6 @@ h1, h2, h3, h4, h5, h6 {line-height: 1.1; text-wrap: balance;
 .swatch {display: flex; height: 1em; aspect-ratio: 1/1; background-color: var(--color); border-radius: 33%; align-items: center; gap: 1em;}
 .legend {display: grid; grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); padding: 2rem; margin: 1rem; gap: 1rem; border: 1px solid #ccc; flex: 1;}
 .container {display: flex; gap: 1rem; align-items: center;}
+
+&:has(path:hover) {path:not(:hover){opacity: 0.5;}}
+path {transition: 300ms;}
