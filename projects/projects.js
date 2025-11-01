@@ -110,7 +110,13 @@ function renderPieChart(projectsGiven) {
   let selectedIndex = -1
   let svg = d3.select('svg');
   svg.selectAll('path').remove();
-  newArcs.forEach((arc, i) => {svg.append('path').attr('d', arc).attr('fill', colors(i)).on('click', () => {selectedIndex = selectedIndex === i ? -1 : i; svg.selectAll('path').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : '')); legend .selectAll('li').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' :''));});});
+  newArcs.forEach((arc, i) => {svg.append('path').attr('d', arc).attr('fill', colors(i)).on('click', () => {selectedIndex = selectedIndex === i ? -1 : i; svg.selectAll('path').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : '')); legend .selectAll('li').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' :''));
+    if (selectedIndex === -1) {renderProjects(projects, projectsContainer, 'h2');}
+    else {const selectedYear = newData[selectedIndex].label;
+      const filtered = projects.filter((p) => p.year === selectedYear);
+      renderProjects(filtered, projectsContainer, 'h2');
+    }
+  });});
   
 }
 
