@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../global.js"></script>
+
+    <style>.projects {display:grid; grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));} 
+       .projects > article {display:grid; grid-template-rows: subgrid; grid-row:span 3; gap: 1em}
+        .projects h2 {margin: 0;}
+         nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: oklch(80% 3% 200);}
+        nav a {flex: 1; text-decoration: none; color: inherit; text-align: center; padding: 0.5em;}
+        nav a.current, nav a[aria-current="page"]{border-bottom: 0.4em solid #94a3b8; padding-bottom: 0.1em;}
+    </style>
+</head>
+<body>
+    <h1>Meta</h1>
+    <p>This page includes stats about the code of this website.</p>
+    <div id="stats"></div>
+
+    <h2>Commits by time of day</h2>
+    <div id="chart"></div>
+
+    <dl id="commit-tooltip" class="info tooltip" hidden>
+        <dt>Commit</dt>
+        <dd>
+            <a href="" id="commit-link" target="_blank"></a>
+        </dd>
+        
+        <dt>Date</dt>
+        <dd id="commit-date"></dd>
+
+        <dt>Time</dt>
+        <dd id="commit-time"></dd>
+
+        <dt>Author</dt>
+        <dd id="author"></dd>
+
+        <dt>Lines Edited</dt>
+        <dd id="lines-edited"></dd>
+    </dl>
+    <p id="selection-count">No commits selected</p>
+    <dl id="language-breakdown" class="stats"></dl>
+    <script src="./main.js" type="module"></script>
+</body>
+</html>
+
+

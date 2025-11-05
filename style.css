@@ -44,4 +44,33 @@ path {transition: 300ms; cursor: pointer;}
 .selected{--color: oklch(60% 45% 0) !important;}
 path.selected {fill: oklch(60% 45% 0) !important;}
 
+#stats dl {display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; justify-items: center; align-items: end;}
+#stats dt {text-transform: uppercase;font-size: 0.9rem; color: #888; grid-row: 1; }
+#stats dd {font-size: 1.8rem; font-weight: 600; margin: 0; grid-row: 2;}
+
+.gridlines line{stroke: #bbb; stroke-opacity: 0.4;}
+.gridlines path {stroke-width: 0;}
+
+dl.info {display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; row-gap: 0.3rem; margin: 0; padding: 0;}
+dl.info dt {font-weight: 500; color: #666; margin: 0;}
+dl.info dd {font-weight: 700; color: #000; margin: 0;}
+#commit-tooltip {position: fixed; top: 1em; left: 1em; background: rgba(255, 255, 255, 0.6); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border-radius: 1em; backdrop-filter: blur(8px); padding: 2em;}
+circle {transition: 200ms; transform-origin: center; transform-box: fill-box;}
+circle:hover{transform: scale(1.5);}
+
+dl.info{transition-duration: 500ms; transition-property: opacity, visibility;}
+dl.info[hidden]:not(:hover, :focus-within) {opacity: 0; visibility: hidden;}
+
+@keyframes marching-ants {to {stroke-dashoffset: -8; /* 5 + 3 */}}
+.selection {fill-opacity: 0.1; stroke: black; stroke-opacity: 0.7; stroke-dasharray: 5 3; animation: marching-ants 2s linear infinite;}
+circle.selected{fill: #ff6b6b;}
+
+#language-breakdown {display: grid; grid-auto-flow: column; justify-content: center; align-items: start; column-gap: 6em; text-align: center; font-family: ui-monospace, "SF Mono", "Courier New", monospace;}
+#language-breakdown dt {grid-row: 1; font-size: 1.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.05em; line-height: 1.1;}
+#language-breakdown dd {grid-row: 2; font-size: 1.3rem; font-weight: 400; line-height: 1.2; margin-top: -0.3em; }
+
+
+
+
+
 

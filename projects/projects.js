@@ -93,6 +93,7 @@ let query = '';
 let searchInput = document.querySelector('.searchBar');
 //searchInput.addEventListener('input', (event) =>{query = event.target.value; let filteredProjects = projects.filter((project) =>{let values = Object.values(project).join('\n').toLowerCase();return values.includes(query.toLowerCase());}); renderProjects(filteredProjects, projectsContainer, 'h2');});
 
+
 function renderPieChart(projectsGiven) {
   d3.select('svg').selectAll('path').remove();
   d3.select('.legend').selectAll('li').remove();
@@ -120,13 +121,9 @@ function renderPieChart(projectsGiven) {
   
 }
 
-renderPieChart(projects);
-searchInput.addEventListener('input', (event) =>{query = event.target.value; let filteredProjects = projects.filter((project) =>{let values = Object.values(project).join('\n').toLowerCase();return values.includes(query.toLowerCase());}); renderProjects(filteredProjects, projectsContainer, 'h2');renderPieChart(filteredProjects);});
 
-/*
-let selectedIndex = -1
-//selectedIndex === i ? -1 : i;
-let svg = d3.select('svg');
-svg.selectAll('path').remove();
-newArcs.forEach((arc, i) => {svg.append('path').attr('d', arc).attr('fill', colors(i)).on('click', () => {selectedIndex = selectedIndex === i ? -1 : i; svg.selectAll('path').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' : '')); legend .selectAll('li').attr('class', (_, idx) => (idx === selectedIndex ? 'selected' :''));});});
-*/
+
+
+renderPieChart(projects);
+//searchInput.addEventListener('input', (event) =>{query = event.target.value.toLowerCase(); updateDisplay();});
+searchInput.addEventListener('input', (event) =>{query = event.target.value; let filteredProjects = projects.filter((project) =>{let values = Object.values(project).join('\n').toLowerCase();return values.includes(query.toLowerCase());}); renderProjects(filteredProjects, projectsContainer, 'h2');renderPieChart(filteredProjects);});
