@@ -101,7 +101,7 @@ function renderCommitInfo(data, commits) {
 
 function renderScatterPlot(data, commits) {
     const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
-    const width = 1000; const height = 600;
+    const width = 1000; const height = 400;
     const svg = d3 
       .select('#chart')
       .append('svg')
@@ -141,7 +141,7 @@ function renderScatterPlot(data, commits) {
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width));
 
     //Create axes
-    const xAxis = d3.axisBottom(xScale);
+    const xAxis = d3.axisBottom(xScale).tickPadding(20);
     const yAxis = d3
       .axisLeft(yScale)
       .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
@@ -149,7 +149,8 @@ function renderScatterPlot(data, commits) {
     svg
       .append('g')
       .attr('transform', `translate(0, ${usableArea.bottom})`)
-      .call(xAxis);
+      .call(xAxis)
+      .style('font-size', '7px');
     // Add Y axis 
     svg
       .append('g')
@@ -180,14 +181,23 @@ function renderScatterPlot(data, commits) {
 }
 
 function renderTooltipContent(commit) {
+    console.log("Commit data:", commit);
+
     const link = document.getElementById('commit-link');
     const date = document.getElementById('commit-date');
+    const time = document.getElementById('commit-time');
+    //const author = document.getElementById('#commit-author');
+    //const lines = document.getElementById('commit-lines');
+
 
     if (Object.keys(commit).length === 0) return;
 
     link.href = commit.url;
     link.textContent = commit.id;
     date.textContent = commit.datetime?.toLocaleString('en', {dateStyle: 'full',});
+    time.textContent = commit.datetime?.toLocaleString('en', {timeStyle: 'short',});
+    //author.textContent = commit.author || 'Unknown';
+    //lines.textContent = commit.lines ? `${commit.lines.length} lines` : '0 lines';
 }
 
 function updateTooltipVisibility(isVisible) {
