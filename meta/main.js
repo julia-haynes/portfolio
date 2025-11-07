@@ -47,9 +47,9 @@ function processCommits(data) {
 
       Object.defineProperty(ret, 'lines', {
         value: lines,
-        enumerable: false,
+        enumerable: true,
         writable: true,
-        confirgurable: true
+        configurable: true
       });
 
       return ret;
@@ -181,13 +181,13 @@ function renderScatterPlot(data, commits) {
 }
 
 function renderTooltipContent(commit) {
-    console.log("Commit data:", commit);
+    //console.log("Commit data:", commit);
 
     const link = document.getElementById('commit-link');
     const date = document.getElementById('commit-date');
     const time = document.getElementById('commit-time');
-    //const author = document.getElementById('#commit-author');
-    //const lines = document.getElementById('commit-lines');
+    const author = document.getElementById('commit-author');
+    const lines = document.getElementById('commit-lines');
 
 
     if (Object.keys(commit).length === 0) return;
@@ -196,8 +196,8 @@ function renderTooltipContent(commit) {
     link.textContent = commit.id;
     date.textContent = commit.datetime?.toLocaleString('en', {dateStyle: 'full',});
     time.textContent = commit.datetime?.toLocaleString('en', {timeStyle: 'short',});
-    //author.textContent = commit.author || 'Unknown';
-    //lines.textContent = commit.lines ? `${commit.lines.length} lines` : '0 lines';
+    author.textContent = commit.author || 'Unknown';
+    lines.textContent = commit.lines ? `${commit.lines.length} lines` : '0 lines';
 }
 
 function updateTooltipVisibility(isVisible) {
