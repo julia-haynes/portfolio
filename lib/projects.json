@@ -37,10 +37,11 @@
         "description": "We created a catalog of galaxies, here we have the non interacting objects. "
     },
     {
-        "title": "Project 7",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Project 7 coming soon"
+        "title": "Geospatial Visualization of Bikemaps",
+        "year": "2025",
+        "image": "images/screenshot7.png",
+        "description": "Using geospatial bikemap data, we created an interactive, immersive map that shows bike traffic in the Boston area during different times of day.",
+        "url": "https://julia-haynes.github.io/bikemaps/" 
     },
     {
         "title": "Project 8",
