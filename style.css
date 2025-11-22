@@ -55,8 +55,23 @@ dl.info {display: grid; grid-template-columns: auto 1fr; column-gap: 1rem; row-g
 dl.info dt {font-weight: 500; color: #666; margin: 0;}
 dl.info dd {font-weight: 700; color: #000; margin: 0;}
 #commit-tooltip {position: fixed; top: 1em; left: 1em; background: rgba(255, 255, 255, 0.6); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border-radius: 1em; backdrop-filter: blur(8px); padding: 2em;}
-circle {transition: all 200ms, r calc(var(--r) * 100ms); transform-origin: center; transform-box: fill-box; @starting-style { r: 0; };}
-circle:hover{transform: scale(1.5);}
+circle {
+  transition: all 200ms;
+  r: calc(var(--r) * 1px);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle {
+  @starting-style {
+    r: 0;
+  }
+}
+
 
 dl.info{transition-duration: 500ms; transition-property: opacity, visibility;}
 dl.info[hidden]:not(:hover, :focus-within) {opacity: 0; visibility: hidden;}
@@ -141,6 +156,8 @@ circle.selected{fill: #ff6b6b;}
   bottom: auto;
   height: 100vh;
 }
+
+
 
 
 

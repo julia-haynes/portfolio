@@ -201,7 +201,7 @@ function updateScatterPlot(filteredCommits) {
   const svg = d3.select('#chart').select('svg');
   const xAxis = d3.axisBottom(xScale);
 
-  xScale = xScale.domain(d3.extent(commits, (d) => d.datetime));
+  xScale = xScale.domain(d3.extent(filteredCommits, (d) => d.datetime));
 
   const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
   const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
@@ -222,10 +222,27 @@ function updateScatterPlot(filteredCommits) {
   dots
     .selectAll('circle')
     .data(sortedCommits, (d) => d.id)
-    .join('circle')
-    .attr('cx', (d) => xScale(d.datetime))
-    .attr('cy', (d) => yScale(d.hourFrac))
-    .attr('r', (d) => rScale(d.totalLines))
+    //.join('circle')
+    //.attr('cx', (d) => xScale(d.datetime))
+    //.attr('cy', (d) => yScale(d.hourFrac))
+    //.attr('r', (d) => rScale(d.totalLines))
+    .join(
+      enter => enter.append('circle')
+        .style('--r', d => rScale(d.totalLines))
+        .attr('cx', d => xScale(d.datetime))
+        .attr('cy', d => yScale(d.hourFrac))
+        .attr('fill', 'steelblue')
+        .style('fill-opacity', 0.7),
+
+    update => update
+        .style('--r', d => rScale(d.totalLines))
+        .attr('cx', d => xScale(d.datetime))
+        .attr('cy', d => yScale(d.hourFrac))
+        .attr('fill', 'steelblue')
+        .style('fill-opacity', 0.7),
+
+    exit => exit.remove()
+    )
     .attr('fill', 'steelblue')
     .style('fill-opacity', 0.7) // Add transparency for overlapping dots
     .on('mouseenter', (event, commit) => {
